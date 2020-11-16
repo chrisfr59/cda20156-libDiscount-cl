@@ -33,13 +33,14 @@ public class GestionUserServicesDAO {
 
 	}
 	
-	public UserDAO recupPersonneParPseudo(String pseudo) {
+	public UserDAO recupPersonneParPseudoEtMdp(String pseudo,String pwd) {
 		// Ouverture d'une session Hibernate
 				Session		s = HibernateUtils.getSession();
 				
 				Query q = s.getNamedQuery("trouverPersonneParSonPseudo");
 				
 			    q.setParameter("val", pseudo);
+			    q.setParameter("valeur", pwd);
 				
 				UserDAO user = (UserDAO) q.getSingleResult();
 				

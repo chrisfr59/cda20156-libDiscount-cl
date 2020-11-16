@@ -1,10 +1,14 @@
 package fr.afpa.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import fr.afpa.dao.beans.UserDAO;
+import fr.afpa.dao.services.GestionUserServicesDAO;
 
 /**
  * Servlet implementation class ServletVerifUser
@@ -36,7 +40,15 @@ public class ServletVerifUser extends HttpServlet {
 		String login = request.getParameter("pseudo");
 		String pwd = request.getParameter("pass");
 		
+		UserDAO user = (UserDAO) new GestionUserServicesDAO().recupPersonneParPseudoEtMdp(login,pwd);
 		
+		 if(user!= null && login == user.getPseudo() && pwd == user.getPwd()) {
+			 
+			 request.getRequestDispatcher("/WEB-INF/utilisateurs/MonCompte.html").forward(request, response);
+			 
+		 }else {
+			 System.out.println("Personne non trouvée : ");
+		}
 	}
 
 }

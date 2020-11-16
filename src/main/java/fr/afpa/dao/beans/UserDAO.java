@@ -23,7 +23,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity(name = "utilisateur")
-@NamedQuery(name="trouverPersonneParSonPseudo",query="SELECT p FROM UserDAO u WHERE u.pseudo = :val")
+@NamedQuery(name="recupPersonneParPseudoEtMdp",query="SELECT p FROM UserDAO u WHERE u.pseudo = :val, :valeur")
 public class UserDAO {
 	
 	@Id
