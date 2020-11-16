@@ -5,40 +5,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="createUser" method="post">
+	<form action="ServletAjoutUser" method="post">
 	
-		<label for="pseudo">Entrez un pseudo :</label>
+		<h3>Création de compte</h3>
+	
+		<label for="pseudo">Pseudo :</label>
     	<input type="text" name="pseudo" id="pseudo" required><br>
             
-    	<label for="pass">Entrez votre mot de passe :</label>
-    	<input type="password" name="pass" id="pass" required><br>
+    	<label for="pwd">Mot de passe :</label>
+    	<input type="password" name="pwd" id="pwd" required><br>
     	
-		<label for="nom">Entrez votre nom :</label>
+		<label for="nom">Nom :</label>
 		<input type="text"name="nom" id="nom" required><br>
 		
-	 	<label for="prenom">Entrez votre prénom :</label>
+	 	<label for="prenom">Prénom :</label>
 	 	<input type="text" name="prenom" id="prenom" required><br>
 
-		<label for="nomLibrairie">Entrez nom librairie :</label>
+		<label for="nomLibrairie">Nom librairie :</label>
 		<input type="text"name="nomLibrairie" id="nomLibrairie" required><br>
 		
-		<label for="numVoie">Entrez numero de voie :</label>
+		<label for="numVoie">Numero de voie :</label>
 		<input type="number"name="numVoie" id="numVoie" required><br>
 		
-		<label for="adresse">Entrez nom de voie :</label>
-		<input type="text"name="adresse" id="adresse" required><br>
+		<label for="nomVoie">Voie :</label>
+		<input type="text"name="nomVoie" id="nomVoie" required><br>
 		
-		<label for="codePostal">Entrez code postale :</label>
-		<input type="text"name="codePostal" id="codePostal" pattern="[0-9]{5}" title="Five digit zip code" required><br>
+		<label for="codePostal">Code postal :</label>
+		<input type="number"name="codePostal" id="codePostal" pattern="[0-9]{5}"  required><br>
 		
-		<label for="nomVille">Entrez ville :</label>
+		<label for="nomVille">Ville :</label>
 		<input type="text"name="nomVille" id="nomVille" required><br>
 		
-		<label for="mail"><b>Mail</b></label>
-		<input type="text" placeholder="Entrez votre adresse mail" name="mail" required><br>
+		<label for="mail"><b>Mail :</b></label>
+		<input type="email" name="mail" id="mail" required><br>
 
-		<label for="phone">Entrez votre téléphone :</label>
-		<input type="text"name="phone" id="phone" pattern="[0-9]{10}" title="Five digit zip code" required><br>
+		<label for="phone">Téléphone :</label>
+		<input type="tel"name="phone" id="phone" pattern="[0-9]\s{2}[0-9]\s{2}[0-9]\s{2}[0-9]\{2}[0-9]\s{2}" required><br>
 		
 		
 		<button type="submit">Créer compte</button>
