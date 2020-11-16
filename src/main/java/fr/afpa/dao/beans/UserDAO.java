@@ -8,7 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,10 +23,12 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity(name = "utilisateur")
+@NamedQuery(name="trouverPersonneParSonPseudo",query="SELECT p FROM UserDAO u WHERE u.pseudo = :val")
 public class UserDAO {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@SequenceGenerator(name = "seq_user", initialValue = 1,allocationSize = 100)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_user")
     @Column(name = "id_user")
 	private int id_user;
 	
