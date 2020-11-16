@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-        </welcome-file-list>
-    </web-app>
+	<servlet>
+		<servlet-name>ServletAjoutUser</servlet-name>
+		<display-name>ServletAjoutUser</display-name>
+		<description></description>
+		<servlet-class>fr.afpa.servlets.ServletAjoutUser</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletCreationCompte</servlet-name>
+		<display-name>ServletCreationCompte</display-name>
+		<description></description>
+		<servlet-class>fr.afpa.servlets.ServletCreationCompte</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletLogin</servlet-name>
+		<display-name>ServletLogin</display-name>
+		<description></description>
+		<servlet-class>fr.afpa.servlets.ServletLogin</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletVerifUser</servlet-name>
+		<display-name>ServletVerifUser</display-name>
+		<description></description>
+		<servlet-class>fr.afpa.servlets.ServletVerifUser</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServletAjoutUser</servlet-name>
+		<url-pattern>/ServletAjoutUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletCreationCompte</servlet-name>
+		<url-pattern>/ServletCreationCompte</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletLogin</servlet-name>
+		<url-pattern>/ServletLogin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletVerifUser</servlet-name>
+		<url-pattern>/ServletVerifUser</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>
+			30
+		</session-timeout>
+	</session-config>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

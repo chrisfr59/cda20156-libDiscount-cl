@@ -9,5 +9,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        
+        <a href="ServletCreationCompte">Cliquez ici pour ajouter une personne</a><br>
+        
+      
     </body>
 </html>
